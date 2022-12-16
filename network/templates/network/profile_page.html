@@ -1,0 +1,43 @@
+{% extends "network/layout.html" %}
+{% block body %}
+
+{% load %}
+<div id="profile_container">
+    <div id="profile_body">
+        <div id="profile_header">
+            <div id="profile_username">{{ username }} </div>
+            <div id="profile_following">Following: {{ following }} Followers: {{ followers }}</div>
+            <!-- <div id="profile_followers">{{ followers }}</div> -->
+            {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                {% if user|stringformat:"s" != username|stringformat:"s" %}
+                <input type="submit" name="follow" value="{{message}}">
+                {% endif %}
+            </form>
+            {% endif %}
+        </div>
+        <div id = "profile_posts">
+            {% for post in posts_from_user %}
+                <div id = "post">
+                    <div id="username"> <a style="text-decoration: none; color: black;" href="{% url 'profile_page' post.username %}">{{ post.username }}</a></div>
+                    <div style="color: blue;">Edit</div>
+                    <div id="comment">{{ post.comment }}</div>
+                    <div id="date" style="color: gray">{{ post.date }}, {{ post.time }}</div>
+                    <div id="likes"> <i class="fa-solid fa-heart"></i> {{ post.likes}}</div>
+                    <div style="color: gray">Comment</div>
+                </div>
+
+            {% endfor %}
+ 
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+

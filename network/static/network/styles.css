@@ -1,0 +1,138 @@
+/* This is for the nav bar */
+ul li {
+    display: inline !important;
+}
+
+/* Index Page ~ Specifically for New POST */
+
+#new_postDiv {
+    border: 2.5px solid lightgray;
+    border-radius: 5px;
+    margin: 15px; 
+    padding: 20px;
+}
+
+#new_postDiv textarea{
+    display: block;
+    width: 100%; 
+    height: 75px;
+    border-radius: 5px;
+    border: 2.5px solid lightgray;
+}
+
+#new_postDiv input {
+    margin-top: 5px;
+    border-radius: 3.5px;
+    padding-left: 7.5px; 
+    padding-right: 7.5px;
+    background: rgb(15,123,255);
+}
+
+/* This to Display All the Posts */
+
+#post {
+    border: 2.5px solid lightgray;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px; 
+    margin: 15px;
+}
+
+#username {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* .fa-heart {
+    color: gray;
+} */
+
+/* Profile Page */
+
+#profile_container {
+    height: 100vh;
+}
+
+#profile_body {
+    width: 80%; 
+    margin: 0 auto;
+    min-height: 100%;
+    height: fit-content;
+    border-left: 5px solid lightgray;
+    border-right: 5px solid lightgray;
+    position: relative;
+}
+
+#profile_header {
+    padding: 30px; 
+    border-bottom: 1px solid lightgray;
+}
+
+#profile_header form {
+    position: absolute;
+    top: 42.5px;
+    right: 20px;
+}
+
+form input {
+    background: black;
+    color: white;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 25%/50%;
+    width: 90px;
+}
+
+#profile_username {
+    font-size: 30px;
+}
+
+/* Pagination Navbar */
+
+#paginationNav {
+    margin: 0 auto !important;
+    text-align: center !important; 
+    
+}
+
+.pagination {
+    width: fit-content;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Edit Comment  */
+
+#edit {
+    color: blue; 
+}
+
+#edit:hover {
+    cursor: pointer !important;
+}
+
+#comment_textarea {
+    display: block;
+    height: 80px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+#save {
+    background: #0d6efd;
+    color: white; 
+    margin: 10px; 
+    margin-left: 0px;
+}
+
+#cancel {
+    background: #dc3545;
+    color: white; 
+}
+
+#save, #cancel {
+    border-radius: 5px;
+}

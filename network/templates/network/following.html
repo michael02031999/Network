@@ -1,0 +1,42 @@
+{% extends "network/layout.html" %}
+{% block body %}
+
+{% if user.is_authenticated %}
+
+<h1 style="margin-top: 10px; margin-left: 20px">Posts You Might Be Interested In...</h1>
+
+{% for post in page.object_list %}
+<div id="post">
+    <div id="id" style = "display: none">{{post.id}}</div>
+    <div id="username"> <a style="text-decoration: none; color: black;" href="{% url 'profile_page' post.username %}">{{ post.username }}</a></div>
+    <!-- <div style="color: blue;">Edit</div> -->
+    <div id="comment">{{ post.comment }}</div>
+    <div id="date" style="color: gray">{{ post.date }}, {{ post.time }}</div>
+
+    {{ids}}
+    {% if post.id in ids %}
+        <div id="likes"> <i id = "like" style="color: gold" class="fa-solid fa-thumbs-up"></i> <span id="numLikes">{{ post.likes}}</span></div>
+    {% else %}
+        <div id="dislikes"> <i id = "dislike" style="color: gray" class="fa-solid fa-thumbs-up"></i> <span id="numLikes">{{ post.likes}}</span></div>
+    {% endif%}
+    <div style="color: gray">Comment</div>
+</div>
+{% endfor %}
+
+<nav id="paginationNav">
+    <ul class="pagination">
+    {% if page.has_previous %}
+      <li class="page-item"><a class="page-link" href="{% url 'following' %}?page={{ page.previous_page_number }}">Previous</a></li>
+    {% endif%}
+      <li class="page-item"><a class="page-link" href="#">{{ page.number }}</a></li>
+    {% if page.has_next%}
+      <li class="page-item"><a class="page-link" href="{% url 'following' %}?page={{ page.next_page_number }}">Next</a></li>
+    {% endif %}
+    </ul>
+</nav>
+
+{% endif %}
+
+
+
+{% endblock %}
