@@ -14,6 +14,8 @@ from pytz import timezone
 
 tz = timezone('EST')
 
+#one small step for mankind
+
 def change_likes(request, id, like_or_dislike):
 
     if like_or_dislike == "like":
